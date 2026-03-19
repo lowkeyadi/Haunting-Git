@@ -9,20 +9,30 @@ public class Interactable : MonoBehaviour, IInteractable
     [SerializeField] private UnityEvent onInteract;///// what why
     public string DisplayName => displayName;
     public bool CanInteract() => isEnabled;
+    private Outline outline;
+    private void Awake()
+    {
+        outline = gameObject.AddComponent<Outline>();////// ref for the scripts. no need to add the outline to each obj--- also in wake.
+        outline.OutlineMode = Outline.Mode.OutlineVisible;
+        outline.OutlineColor = Color.blue;//////Automatic scares.
+        outline.OutlineWidth = 1f;
+        outline.enabled = false;/// so it starts disabled
 
+
+    }
     public void Interact()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
         onInteract?.Invoke();
     }
 
     public void OnFocusGained()
     {
-        throw new System.NotImplementedException();
+        outline.enabled = true;
     }
 
     public void OnFocusLost()
     {
-        throw new System.NotImplementedException();
+        outline.enabled = false;
     }
 }
