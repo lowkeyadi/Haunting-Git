@@ -10,16 +10,10 @@ public class Interactable : MonoBehaviour, IInteractable
     public string DisplayName => displayName;
     public bool CanInteract() => isEnabled;
 
-    public string DisplayName => throw new System.NotImplementedException();
-
-    public bool CanInteract()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public void Interact()
     {
         throw new System.NotImplementedException();
+        onInteract?.Invoke();
     }
 
     public void OnFocusGained()
