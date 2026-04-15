@@ -183,7 +183,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450753637}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &450753640
 Camera:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450753637}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 618b0e3f6c65dd247a4a016150006c57, type: 3}
   m_Name: 
@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8047161636021232021, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -624,33 +624,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1829285333}
+      addedObject: {fileID: 1829285337}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1829285337}
+      addedObject: {fileID: 1829285341}
   m_SourcePrefab: {fileID: 100100000, guid: 97ed071b024965246afb651b789b963c, type: 3}
 --- !u!1 &1829285328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
   m_PrefabInstance: {fileID: 1829285327}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &1829285333
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829285328}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: ab93b0f8d1493114a8433269b65459b2, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: ab93b0f8d1493114a8433269b65459b2, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!114 &1829285337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,8 +646,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd671f73fd03ce40978045a894e74c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationToggle
-  animationComponent: {fileID: 1829285333}
+  animationComponent: {fileID: 0}
   clipName: Rotation_test
+--- !u!95 &1829285341
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829285328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac76e3092f89fe547a9708c7229718f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &119734848978804391
 GameObject:
   m_ObjectHideFlags: 0
