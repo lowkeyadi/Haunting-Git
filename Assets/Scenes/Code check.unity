@@ -646,8 +646,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd671f73fd03ce40978045a894e74c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationToggle
-  animationComponent: {fileID: 0}
-  clipName: Rotation_test
+  MyRoatat: {fileID: 1829285341}
+  displayName: Scare Object
+  canInteract: 1
 --- !u!95 &1829285341
 Animator:
   serializedVersion: 7
