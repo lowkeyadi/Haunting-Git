@@ -443,6 +443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NestedParentArmature_Unpack
       objectReference: {fileID: 0}
+    - target: {fileID: 8047161636021232021, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -608,7 +612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97ed071b024965246afb651b789b963c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 84.14296
+      value: 116.7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
       propertyPath: m_Name
@@ -619,46 +623,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1829285329}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1829285333}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1829285337}
   m_SourcePrefab: {fileID: 100100000, guid: 97ed071b024965246afb651b789b963c, type: 3}
 --- !u!1 &1829285328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
   m_PrefabInstance: {fileID: 1829285327}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1829285329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829285328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0314f7b6e24d440a14f80414bb1875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
-  isEnabled: 1
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1829285333}
-        m_TargetAssemblyTypeName: UnityEngine.Animation, UnityEngine
-        m_MethodName: set_clip
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 7400000, guid: ab93b0f8d1493114a8433269b65459b2, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!111 &1829285333
 Animation:
   m_ObjectHideFlags: 0
@@ -672,10 +647,24 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: ab93b0f8d1493114a8433269b65459b2, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &1829285337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829285328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd671f73fd03ce40978045a894e74c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationToggle
+  animationComponent: {fileID: 1829285333}
+  clipName: Rotation_test
 --- !u!1 &119734848978804391
 GameObject:
   m_ObjectHideFlags: 0

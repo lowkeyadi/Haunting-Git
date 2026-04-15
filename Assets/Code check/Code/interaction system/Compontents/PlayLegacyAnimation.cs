@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class PlayLegacyAnimation : MonoBehaviour
+public class AnimationToggle : MonoBehaviour
 {
     [SerializeField] private Animation animationComponent;
-    [SerializeField] private string Rotation_test;
+    [SerializeField] private string clipName = "Rotation_test";
+
+    private bool isOn = false;
 
     private void Awake()
     {
@@ -11,21 +13,19 @@ public class PlayLegacyAnimation : MonoBehaviour
             animationComponent = GetComponent<Animation>();
     }
 
-    public void PlayAnimation()
+    public void Toggle()
     {
         if (animationComponent == null)
         {
-            Debug.LogWarning("No Animation component found on " + gameObject.name);
+            Debug.LogWarning("No Animation component on " + gameObject.name);
             return;
         }
 
-        if (string.IsNullOrEmpty(Rotation_test))
+        isOn = !isOn;
+
+        if (isOn)
         {
-            Debug.LogWarning("Clip name is empty on " + gameObject.name);
-            return;
+            animationComponent.Play(clipName);
         }
-
-        Debug.Log("Playing animation: " + Rotation_test);  ///("Playing animation: " + clipName);
-        animationComponent.Play(Rotation_test);
     }
 }
