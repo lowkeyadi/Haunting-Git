@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedBakingSet: {fileID: 0}
-  sceneGUID: db5b83e946d7a624c90a481dc3836eaf
+  sceneGUID: 6cf4d885d8f083a42b239f2a5702eb21
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
   obsoleteCellSupportDataAsset: {fileID: 0}
@@ -628,12 +628,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1829285341}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1829285343}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1829285342}
   m_SourcePrefab: {fileID: 100100000, guid: 97ed071b024965246afb651b789b963c, type: 3}
 --- !u!1 &1829285328 stripped
 GameObject:
@@ -677,56 +671,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &1829285342
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829285328}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.2483673, y: 1.312866, z: 0.9985962}
-  m_Center: {x: -0.01687494, y: 0.0056834226, z: -0.0007019043}
---- !u!114 &1829285343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829285328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0314f7b6e24d440a14f80414bb1875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
-  isEnabled: 1
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1829285337}
-        m_TargetAssemblyTypeName: PlayScareAnimation, Assembly-CSharp
-        m_MethodName: OnFocusGained
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &119734848978804391
 GameObject:
   m_ObjectHideFlags: 0
