@@ -15,7 +15,7 @@ public class Playerinteractor : MonoBehaviour
     }
     private IInteractable FindNearestInteractable()
     {//                      to get all obj around us  
-        int count = Physics.OverlapSphereNonalloc(transform.position, radius, buffer, interactableLayers, QueryTriggerInteraction.Collide];
+        int count = Physics.OverlapSphereNonAlloc(transform.position, radius, buffer, interactableLayers, QueryTriggerInteraction.Collide);
         IInteractable nearest = null;
         float bestdistsg = float.MaxValue;
         for (int i = 0; i < count; i++)
@@ -27,7 +27,7 @@ public class Playerinteractor : MonoBehaviour
             if (interactable == null) continue;
             if (!interactable.CanInteract()) continue;
             float dissq = (col.transform.position - transform.position).sqrMagnitude;///checks if distance to the player is smaller than our currently nearest.
-            if (dissq > bestdistsg)
+            if (dissq < bestdistsg)
             {
                 bestdistsg = dissq;
                 nearest = interactable;
@@ -37,11 +37,12 @@ public class Playerinteractor : MonoBehaviour
         }
         return nearest;
     }
-    private void UpdateFocus(IInteractable nearest) { }
+    private void UpdateFocus(IInteractable nearest) 
     {
-        if (RefrenceEquals(focuesd, nearest)) return;
+        if (ReferenceEquals(focused, nearest)) return;
+        focused?.OnFocusLost();
+        focused = nearest;
+        focused?.OnFocusGained();
     }
 }
-
-
 
