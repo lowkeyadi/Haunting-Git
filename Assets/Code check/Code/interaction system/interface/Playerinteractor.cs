@@ -12,6 +12,10 @@ public class Playerinteractor : MonoBehaviour
     {
         IInteractable nearest = FindNearestInteractable();
         UpdateFocus(nearest);
+        if (focused != null && Input.GetKeyDown(KeyCode.E))
+        {
+          if(focused.CanInteract()) focused.Interact();
+        }
     }
     private IInteractable FindNearestInteractable()
     {//                      to get all obj around us  
