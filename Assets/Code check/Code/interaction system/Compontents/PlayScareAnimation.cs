@@ -29,7 +29,7 @@ public class PlayScareAnimation : MonoBehaviour, IInteractable
             return;
 
         isOn = !isOn;
-        MyRoatat.SetBool("Scare", isOn);
+        MyRoatat.SetTrigger("Scare");
     }
 
     public bool CanInteract()

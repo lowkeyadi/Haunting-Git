@@ -28,11 +28,17 @@ public class Interactable : MonoBehaviour, IInteractable
 
     public void OnFocusGained()
     {
+        //////////////////////////////////////////
+        Debug.Log($"[Interactable] OnFocusGained on {gameObject.name}, outline null? {outline == null}");
+        /////////////////////////////////////////////////////////////////
         outline.enabled = true;
     }
 
     public void OnFocusLost()
     {
+        ///////////////////////////////////////////////////////
+        Debug.Log($"[Interactable] OnFocusLost on {gameObject.name}");
+        //////////////////////////////////////////////////////////////////////////////////
         outline.enabled = false;
     }
 }
