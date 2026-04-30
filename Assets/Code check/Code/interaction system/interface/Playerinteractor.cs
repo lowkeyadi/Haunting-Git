@@ -1,11 +1,14 @@
 
+using System;
 using UnityEngine;
 
+/** @return bro.. 
+ */
 public class Playerinteractor : MonoBehaviour
 {
     [SerializeField] private float radius = 2f;
     [SerializeField] private LayerMask interactableLayers;/// layers that we want to be able to interact with 
-
+    [SerializeField] private InteractPrompt prompt;
     private Collider[] buffer = new Collider[32];/// contains all the objects around the player, assign in the update/
     private IInteractable focused;
     private void Update()
@@ -56,7 +59,16 @@ public class Playerinteractor : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////
         focused?.OnFocusLost();
         focused = nearest;
-        focused?.OnFocusGained();
+        if (focused != null)
+        {
+            focused.OnFocusGained();
+            prompt.Show(focused);
+        }
+        else
+        {
+            prompt.Hide();
+        }
+
     }
 }
 
