@@ -28,11 +28,12 @@ public class Playerinteractor : MonoBehaviour
         float bestdistsg = float.MaxValue;
         for (int i = 0; i < count; i++)
         {
-            //// will be null at first and also save the nearest distance which at first will be maz value.
-            Collider col = buffer[i]; 
             ///////////////////////////////////////////////////////////////////////////////////////////
             Debug.Log($"[Interactor] Checking collider: {col.gameObject.name}");
             ///////////////////////////////////////////////////////////////////////////////////////////
+            //// will be null at first and also save the nearest distance which at first will be maz value.
+            Collider col = buffer[i]; 
+            
             if (col == null) continue;  /// go through each collider that is not null and try to get an interactable
             IInteractable interactable = col.GetComponent<IInteractable>();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

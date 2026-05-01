@@ -19,7 +19,7 @@ public class InteractPrompt : MonoBehaviour
 
         cam = Camera.main;
         labelRect = label.rectTransform;
-        canvas = canvas.GetComponentInParent<Canvas>();
+        canvas = label.GetComponentInParent<Canvas>();
         canvasRect = canvas.GetComponent<RectTransform>();
         Hide();
     }
@@ -50,7 +50,7 @@ public class InteractPrompt : MonoBehaviour
             return;
         }
         target = interactable.transform;
-        label.text= $"{keyHint}{interactable.DisplayName}";
+        label.text = $"{keyHint}{interactable.DisplayName}";
         label.gameObject.SetActive(true);
     }
 

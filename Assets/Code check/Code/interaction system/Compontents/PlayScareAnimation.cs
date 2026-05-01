@@ -15,21 +15,21 @@ public class PlayScareAnimation : MonoBehaviour, IInteractable
             MyRoatat = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Interact();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        Interact();
+    //    }
+    //}
 
     public void Interact()
     {
         if (!canInteract || MyRoatat == null)
             return;
 
-        isOn = !isOn;
-        MyRoatat.SetTrigger("Scare");
+        //isOn = !isOn;
+        //MyRoatat.SetTrigger("Scare");
     }
 
     public bool CanInteract()
