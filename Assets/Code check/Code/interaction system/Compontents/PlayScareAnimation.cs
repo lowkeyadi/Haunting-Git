@@ -5,7 +5,7 @@ public class PlayScareAnimation : MonoBehaviour, IInteractable
     [SerializeField] private Animator MyRoatat;
     [SerializeField] private string displayName = "Scare Object";
     [SerializeField] private bool canInteract = true;
-    private bool isOn = false;
+    //private bool isOn = false;
 
     public string DisplayName => displayName;
 

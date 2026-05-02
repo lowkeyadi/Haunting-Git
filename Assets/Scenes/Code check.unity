@@ -646,7 +646,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 365725265}
     - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
-      insertIndex: 2
+      insertIndex: 1
       addedObject: {fileID: 1175134967}
   m_SourcePrefab: {fileID: 100100000, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
 --- !u!4 &978790749 stripped
@@ -1257,7 +1257,7 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 1829285343}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 1829285337}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 97ed071b024965246afb651b789b963c, type: 3}
       insertIndex: -1
@@ -1346,8 +1346,8 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1829285343}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+      - m_Target: {fileID: 1829285337}
+        m_TargetAssemblyTypeName: PlayScareAnimation, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 1
         m_Arguments:

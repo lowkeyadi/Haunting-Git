@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour, IInteractable
     [SerializeField] private string displayName = "Interact";
     [SerializeField] private bool isEnabled = true;
     [SerializeField] private UnityEvent onInteract;
-    public string DisplayName => displayName;
+    public string DisplayName => displayName; 
     public bool CanInteract() => isEnabled;
     private Outline outline;
     private void Awake()
@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour, IInteractable
     public void Interact()
     {
         //throw new System.NotImplementedException();
-        onInteract?.Invoke();
+        onInteract?.Invoke();///////////////////////////////////// somthing about this is causing my overflow fuck.
     }
 
     public void OnFocusGained()
