@@ -50,7 +50,7 @@ public class InteractPrompt : MonoBehaviour
             return;
         }
         target = interactable.transform;
-        label.text = $"{keyHint}{interactable.DisplayName}";
+        label.text = $"{interactable.DisplayName} {keyHint}";
         label.gameObject.SetActive(true);
     }
 
