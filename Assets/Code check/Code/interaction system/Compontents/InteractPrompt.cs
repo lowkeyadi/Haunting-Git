@@ -38,7 +38,13 @@ public class InteractPrompt : MonoBehaviour
         {
             labelRect.anchoredPosition = localPoint;
         }
-
+        if (screenPos.z < 0f ||
+        screenPos.x < 0 || screenPos.x > Screen.width ||
+        screenPos.y < 0 || screenPos.y > Screen.height)
+        {
+            label.gameObject.SetActive(false);
+            return;
+        }
 
     }
 
