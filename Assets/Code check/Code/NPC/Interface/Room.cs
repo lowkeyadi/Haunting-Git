@@ -21,10 +21,20 @@ public class Room : MonoBehaviour
     }
     private void Update()
     {
-        /// agent finished waling?
-        if(!agent.pathPending && agent.remainingDistance<=agent. stoppingDistance)
+        /// agent finished walking?
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+
+        {
+            waitTimer -= Time.deltaTime;
+            if (waitTimer <= 0f)
+                GoToNewSpot();
+        }
+    }
+    void GoToNewSpot()
+    {
+        //agent.SetDestination(assignedRoom.GetRandomPoint());
+        waitTimer = Random.Range(waitMin, waitMax);
     }
 
-
-}
+    }
  
