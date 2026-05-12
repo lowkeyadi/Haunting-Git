@@ -13,41 +13,42 @@ public class EnemyCheck : MonoBehaviour
         for (int i = 0; i < waypoints.Length; i++)
         {
             waypoints[i] = pathHolder.GetChild(i).position;
+            waypoints[i] = new Vector3(waypoints[i].x, transform.position.y, waypoints[i].z );
+            
+            StartCoroutine(FollowPath(waypoints));
         }
-    }
-    IEnumerator FollowPath(Vector3[] waypoints)
-    {
-        transform.position = waypoints[0];
-        int targetWaypointIndex = 1; //// since we're already at point 1
-        Vector3 targetWaypoint = waypoints(targetWaypointIndex);
-        while (true)
+        IEnumerator FollowPath(Vector3[] waypoints)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint, speed * Time.deltaTime);
-            if (transform.position == targetWaypoint)
+            transform.position = waypoints[0];
+            int targetWaypointIndex = 1; //// since we're already at point 1
+            Vector3 targetWaypoint = waypoints[targetWaypointIndex];
+            while (true)
             {
-                targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length; ; /// index plus 1 mod waypoint dot length so that means-
-                ////when this value is equal to this value it will go back to zero!!
-                targetWaypoint=waypoints[targetWaypointIndex];
-                yield return new WaitForSeconds (waitTime);
+                transform.position = Vector3.MoveTowards(transform.position, targetWaypoint, speed * Time.deltaTime);
+                if (transform.position == targetWaypoint)
+                {
+                    targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length; ; /// index plus 1 mod waypoint dot length so that means-
+                    ////when this value is equal to this value it will go back to zero!!
+                    targetWaypoint = waypoints[targetWaypointIndex];
+                    yield return new WaitForSeconds(waitTime);
+                }
+                yield return null;
+
             }
 
-
-
-        }
-
-
-        void OnDrawGizmos()
-        {
-            Vector3 startPosition = pathHolder.GetChild(0).position;
-            Vector3 previousPosition = startPosition;
-
-            foreach (Transform waypoint in pathHolder)
+            void OnDrawGizmos()
             {
-                Gizmos.DrawSphere(waypoint.position, 0.2f);
-                Gizmos.DrawLine(previousPosition, waypoint.position);
-                previousPosition = waypoint.position;
+                Vector3 startPosition = pathHolder.GetChild(0).position;
+                Vector3 previousPosition = startPosition;
+
+                foreach (Transform waypoint in pathHolder)
+                {
+                    Gizmos.DrawSphere(waypoint.position, 0.2f);
+                    Gizmos.DrawLine(previousPosition, waypoint.position);
+                    previousPosition = waypoint.position;
+                }
+                Gizmos.DrawLine(previousPosition, startPosition);
             }
-            Gizmos.DrawLine(previousPosition, startPosition);
         }
     }
 }

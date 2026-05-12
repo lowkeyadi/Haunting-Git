@@ -764,6 +764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b1873eb4597804daa21fd1bccff64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCheck
+  speed: 2
+  waitTime: 0.3
   pathHolder: {fileID: 1611899442}
 --- !u!1 &811042558
 GameObject:
@@ -1986,8 +1988,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1786134, y: 2.0508277, z: 0.9985962}
-  m_Center: {x: 0.018006086, y: -0.052590013, z: -0.0007019043}
+  m_Size: {x: 0.9550919, y: 0.89792395, z: 0.9985962}
+  m_Center: {x: 0.007246284, y: 0.1447444, z: -0.0007019043}
 --- !u!114 &1829285343
 MonoBehaviour:
   m_ObjectHideFlags: 0
