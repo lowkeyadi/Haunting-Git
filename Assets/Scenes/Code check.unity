@@ -631,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 665820874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.2517609, z: -0, w: 0.96778953}
-  m_LocalPosition: {x: -5.21, y: -0.34, z: 2.21}
+  m_LocalPosition: {x: -5.901, y: -0.34, z: 5.138}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1.0636}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 672388150}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,7 +746,7 @@ Transform:
   m_GameObject: {fileID: 672388145}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.080042996, z: -0, w: 0.9967914}
-  m_LocalPosition: {x: 2.77, y: -1.8650599, z: -7.41}
+  m_LocalPosition: {x: 3.657, y: -1.86, z: -7.41}
   m_LocalScale: {x: 0.44846, y: 0.44846, z: 0.44846}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCheck
   speed: 2
-  waitTime: 0.3
+  waitTime: 0.5
   pathHolder: {fileID: 1611899442}
 --- !u!1 &811042558
 GameObject:
@@ -1050,7 +1050,7 @@ Transform:
   m_GameObject: {fileID: 1017634893}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.2517609, z: -0, w: 0.96778953}
-  m_LocalPosition: {x: -10.06, y: -0.4, z: 1.23}
+  m_LocalPosition: {x: -12.63, y: -0.4, z: 1.8}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1.0636}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1728,7 +1728,7 @@ Transform:
   m_GameObject: {fileID: 1611899441}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.080042996, z: -0, w: 0.9967914}
-  m_LocalPosition: {x: 3.42718, y: 0.23, z: -2.2249997}
+  m_LocalPosition: {x: 4.3141804, y: 0.23, z: -2.2249997}
   m_LocalScale: {x: 0.43432, y: 0.43432, z: 0.43432}
   m_ConstrainProportionsScale: 0
   m_Children:
