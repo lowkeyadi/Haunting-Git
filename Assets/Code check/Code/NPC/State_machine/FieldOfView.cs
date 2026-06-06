@@ -4,6 +4,7 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour
 {
     public float radius;
+    [Range(0,360)]
     public float angle;
 
     public GameObject playerRef;
