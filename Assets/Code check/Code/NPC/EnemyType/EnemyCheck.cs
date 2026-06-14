@@ -58,11 +58,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyCheck : MonoBehaviour
+public class EnemyCheck : MonoBehaviour, IWaypointFollower
 {
     public float speed = 2;
     public float waitTime = .3f;
     public Transform pathHolder;
+
+    // Exposed so the scare/proximity system can read where this NPC is headed.
+    public Vector3 CurrentWaypoint { get; private set; }
+    public bool HasWaypoint { get; private set; }
 
     private void Start()
     {
@@ -81,6 +85,8 @@ public class EnemyCheck : MonoBehaviour
         transform.position = waypoints[0];
         int targetWaypointIndex = 1; // since we're already at point 0
         Vector3 targetWaypoint = waypoints[targetWaypointIndex];
+        CurrentWaypoint = targetWaypoint;
+        HasWaypoint = true;
 
         while (true)
         {
@@ -90,6 +96,7 @@ public class EnemyCheck : MonoBehaviour
                 targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length;
                 // when index reaches waypoints.Length it wraps back to 0
                 targetWaypoint = waypoints[targetWaypointIndex];
+                CurrentWaypoint = targetWaypoint;
                 yield return new WaitForSeconds(waitTime);
             }
             yield return null;
