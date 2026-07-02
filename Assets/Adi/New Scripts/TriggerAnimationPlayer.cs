@@ -1,43 +1,53 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class TriggerAnimationPlayer : MonoBehaviour
 {
     public Animator animator;
-
     public string triggerName = "Play";
-
     public GameObject interactionIndicator;
 
     [Header("Audio")]
     public AudioClip soundWhileAnimationPlays;
+
+    [Header("Scare Settings")]
+    public float scareActiveTime = 2f;
+
+    public bool IsScaring { get; private set; }
 
     private bool playerInRange = false;
 
     private void Start()
     {
         if (interactionIndicator != null)
-        {
             interactionIndicator.SetActive(false);
-        }
     }
 
     private void Update()
     {
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            StartCoroutine(PlayScare());
+        }
+    }
+
+    private IEnumerator PlayScare()
+    {
+        IsScaring = true;
+
+        if (animator != null)
             animator.SetTrigger(triggerName);
 
-            if (soundWhileAnimationPlays != null)
-            {
-                AudioSource.PlayClipAtPoint(soundWhileAnimationPlays, transform.position);
-            }
+        if (soundWhileAnimationPlays != null)
+            AudioSource.PlayClipAtPoint(soundWhileAnimationPlays, transform.position);
 
-            if (interactionIndicator != null)
-            {
-                interactionIndicator.SetActive(false);
-            }
-        }
+        if (interactionIndicator != null)
+            interactionIndicator.SetActive(false);
+
+        yield return new WaitForSeconds(scareActiveTime);
+
+        IsScaring = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,9 +57,7 @@ public class TriggerAnimationPlayer : MonoBehaviour
             playerInRange = true;
 
             if (interactionIndicator != null)
-            {
                 interactionIndicator.SetActive(true);
-            }
         }
     }
 
@@ -60,9 +68,7 @@ public class TriggerAnimationPlayer : MonoBehaviour
             playerInRange = false;
 
             if (interactionIndicator != null)
-            {
                 interactionIndicator.SetActive(false);
-            }
         }
     }
 }
