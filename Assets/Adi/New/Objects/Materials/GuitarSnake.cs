@@ -9,6 +9,9 @@ public class TriggerAnimationPlayer : MonoBehaviour
 
     public GameObject interactionIndicator;
 
+    [Header("Audio")]
+    public AudioClip soundWhileAnimationPlays;
+
     private bool playerInRange = false;
 
     private void Start()
@@ -24,6 +27,11 @@ public class TriggerAnimationPlayer : MonoBehaviour
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
             animator.SetTrigger(triggerName);
+
+            if (soundWhileAnimationPlays != null)
+            {
+                AudioSource.PlayClipAtPoint(soundWhileAnimationPlays, transform.position);
+            }
 
             if (interactionIndicator != null)
             {
