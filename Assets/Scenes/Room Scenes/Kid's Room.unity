@@ -296,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117523777
@@ -7330,10 +7330,10 @@ MonoBehaviour:
   maxState: 12
   startState: 1
   enableDecay: 1
-  decayTime: 2000
+  decayTime: 50000
   fearMeterUI: {fileID: 1245400820}
   changeSceneAtMaxFear: 1
-  nextSceneName: 
+  nextSceneName: Dining Room
   OnStateChanged:
     m_PersistentCalls:
       m_Calls: []

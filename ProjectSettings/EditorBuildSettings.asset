@@ -5,9 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Room Scenes/officeroom.unity
+    guid: dc36e3afe58b7034391171fa9623546d
+  - enabled: 1
+    path: Assets/Scenes/Room Scenes/Parentsbedroom.unity
+    guid: f664070ae95072f4d9bd92f70836e336
+  - enabled: 1
+    path: Assets/Scenes/Room Scenes/Kid's Room.unity
+    guid: 262598d49d4973743a3431d19419a23a
+  - enabled: 1
+    path: Assets/Scenes/Room Scenes/Dining Room.unity
+    guid: 919755eb1c04313488512fb82e3d45a1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
