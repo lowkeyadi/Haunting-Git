@@ -8,6 +8,10 @@ public class NPCScareDetector : MonoBehaviour
 
     [Header("References")]
     public FearMeter fearMeter;
+    public Animator animator;
+
+    [Header("Animator")]
+    public string scaredTriggerName = "Scared";
 
     [Header("Cooldown")]
     public float scareCooldown = 2f;
@@ -16,7 +20,7 @@ public class NPCScareDetector : MonoBehaviour
 
     private void Update()
     {
-        if (cooldownTimer > 0)
+        if (cooldownTimer > 0f)
         {
             cooldownTimer -= Time.deltaTime;
             return;
@@ -26,15 +30,18 @@ public class NPCScareDetector : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, detectionDistance, scareObjectLayer))
         {
-            TriggerAnimationPlayer scareObject = hit.collider.GetComponent<TriggerAnimationPlayer>();
+            TriggerAnimationPlayer scareObject =
+                hit.collider.GetComponentInParent<TriggerAnimationPlayer>();
 
             if (scareObject != null && scareObject.IsScaring)
             {
                 if (fearMeter != null)
-                {
                     fearMeter.RegisterScare();
-                    cooldownTimer = scareCooldown;
-                }
+
+                if (animator != null)
+                    animator.SetTrigger(scaredTriggerName);
+
+                cooldownTimer = scareCooldown;
             }
         }
 
